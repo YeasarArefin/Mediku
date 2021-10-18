@@ -12,9 +12,7 @@ const useFetch = () => {
 
     }, []);
 
-    return [
-        doctors
-    ];
+    return doctors;
 
 };
 

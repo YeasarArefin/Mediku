@@ -16,7 +16,7 @@ SwiperCore.use([EffectCoverflow, Pagination, Autoplay]);
 
 const Services = () => {
 
-    const [doctors] = useFetch();
+    const doctors = useFetch();
 
     return (
 

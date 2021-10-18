@@ -7,6 +7,8 @@ import Login from './components/Registration Form/Login';
 import Contact from './components/Contact';
 import AuthProvider from './context/AuthProvider';
 import Register from './components/Registration Form/Register';
+import DoctorsProvider from './context/DoctorsProvider';
+import Appointment from './components/Appointment';
 
 function App() {
 
@@ -14,39 +16,47 @@ function App() {
 
 		<AuthProvider>
 
-			<Router>
+			<DoctorsProvider>
 
-				<Navbar />
+				<Router>
 
-				<Switch>
+					<Navbar />
 
-					<Route exact path="/">
-						<HomePage />
-					</Route>
+					<Switch>
 
-					<Route exact path="/home">
-						<HomePage />
-					</Route>
+						<Route exact path="/">
+							<HomePage />
+						</Route>
 
-					<Route exact path="/login">
-						<Login />
-					</Route>
+						<Route exact path="/home">
+							<HomePage />
+						</Route>
 
-					<Route exact path="/register">
-						<Register />
-					</Route>
+						<Route exact path="/login">
+							<Login />
+						</Route>
 
-					<Route exact path="/contact">
-						<Contact />
-					</Route>
+						<Route exact path="/register">
+							<Register />
+						</Route>
 
-					<Route exact path="*">
-						<Notfound />
-					</Route>
+						<Route exact path="/contact">
+							<Contact />
+						</Route>
 
-				</Switch>
+						<Route exact path="/appointment/:id">
+							<Appointment />
+						</Route>
 
-			</Router>
+						<Route exact path="*">
+							<Notfound />
+						</Route>
+
+					</Switch>
+
+				</Router>
+
+			</DoctorsProvider>
 
 		</AuthProvider>
 

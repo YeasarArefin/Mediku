@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const SingleService = ({ doctor }) => {
 
-    const { name, designation, img, discription } = doctor;
-
+    const { id, name, designation, img, discription } = doctor;
 
     return (
 
@@ -21,6 +21,12 @@ const SingleService = ({ doctor }) => {
                         <h2 class="title-font font-medium text-lg text-gray-900">{name}</h2>
                         <h3 class="text-indigo-500 mb-3">{designation}</h3>
                         <p class="mb-4">{discription}</p>
+
+                        <Link to={`/appointment/${id}`}>
+                            <button className="px-3 py-2 bg-indigo-700 text-white outline-none focus:ring-4 focus:ring-indigo-300 transition duration-500 rounded-full mb-5">Take Appoinment</button>
+                        </Link>
+
+                        <br />
 
                         <span class="inline-flex">
 
