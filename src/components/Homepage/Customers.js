@@ -12,7 +12,9 @@ const Customers = () => {
 
                     <div class="flex flex-col text-center w-full mb-10">
                         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
-
+                        <div className="flex mt-6 justify-center">
+                            <div className="w-16 h-1 rounded-full bg-indigo-600 inline-flex"></div>
+                        </div>
                     </div>
 
                     <div class="flex flex-wrap -m-4 text-center">

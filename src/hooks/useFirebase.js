@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initApp from '../firebase/firebase.init';
-import { useHistory } from 'react-router-dom';
 
 initApp();
 
@@ -10,28 +9,52 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
-    const history = useHistory();
 
     const googleLogin = () => {
 
-        signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider);
+
+    };
+
+    const registerWithEmailPassword = (email, password, name, img) => {
+
+        createUserWithEmailAndPassword(auth, email, password)
+
             .then(result => {
 
                 const user = result.user;
                 setUser(user);
-                history.push("/home");
-            });
+                console.log(user);
 
+                updateProfile(auth.currentUser, {
+                    displayName: name, photoURL: img
+                }).then(() => {
+                    // Profile updated!
+                    console.log('name added');
+                    // ...
+                }).catch((error) => {
+                    // An error occurred
+                    // ...
+                });
+
+            })
+            .catch((error) => {
+                console.log(error.message);
+            });
 
     };
 
-    const logOut = () => {
 
-        signOut(auth).then(() => {
-            setUser({});
-        }).catch((error) => {
-            // An error happened.
-        });
+    const loginWithEmailPassword = (email, password) => {
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                console.log(user);
+            }).catch(error => {
+                console.log(error.message);
+            });
 
     };
 
@@ -49,10 +72,22 @@ const useFirebase = () => {
 
     }, []);
 
+    const logOut = () => {
+
+        signOut(auth).then(() => {
+            setUser({});
+        }).catch((error) => {
+            // An error happened.
+        });
+
+    };
+
     return {
         googleLogin,
         user,
-        logOut
+        logOut,
+        registerWithEmailPassword,
+        loginWithEmailPassword,
     };
 
 };

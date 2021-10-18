@@ -6,6 +6,7 @@ import Notfound from './components/Notfound';
 import Login from './components/Registration Form/Login';
 import Contact from './components/Contact';
 import AuthProvider from './context/AuthProvider';
+import Register from './components/Registration Form/Register';
 
 function App() {
 
@@ -29,6 +30,10 @@ function App() {
 
 					<Route exact path="/login">
 						<Login />
+					</Route>
+
+					<Route exact path="/register">
+						<Register />
 					</Route>
 
 					<Route exact path="/contact">

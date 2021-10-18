@@ -3,13 +3,13 @@ import { HiMenuAlt3 } from 'react-icons/hi';
 import { Link, NavLink } from 'react-router-dom';
 import { FaClinicMedical } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
-import useFirebase from '../hooks/useFirebase';
+import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
 
     const [mobileNav, setMobileNav] = useState(false);
     const [show, setShow] = useState(true);
-    const { user, logOut } = useFirebase();
+    const { user, logOut } = useAuth();
 
     const menu = [
         { id: 1, text: 'Home', to: '/' },
@@ -48,7 +48,7 @@ const Navbar = () => {
             {/* desktop nav  */}
             <nav className="container flex items-center px-12 py-3">
                 {/* brand  */}
-                <Link to="/home" className="flex items-center space-x-2 flex-grow">
+                <Link to="/home" className="flex items-center space-x-1 flex-grow">
                     <h1 className={`text-3xl font-extrabold transition duration-150 ${show ? "text-indigo-700 " : "text-white"} flex items-center gap-x-3`} ><FaClinicMedical /> Mediku</h1>
                 </Link>
                 {/* menu s */}
@@ -67,7 +67,7 @@ const Navbar = () => {
 
                         user.email ? (
 
-                            <div className="flex items-center gap-x-5">
+                            <div className="flex items-center gap-x-3">
 
                                 <img width="40px" className="rounded-full" src={user.photoURL} alt="user img" />
 
@@ -79,11 +79,23 @@ const Navbar = () => {
 
                         ) : (
 
-                            <Link to="/login">
+                            <>
 
-                                <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg`}>Login</button>
+                                <Link to="/login">
 
-                            </Link>
+                                    <button className={`transition duration-150 ${!show && "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg border border-gray-400`} >Login</button>
+
+                                </Link>
+
+                                <Link to="/Register">
+
+                                    <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg`} >Register</button>
+
+                                </Link>
+
+
+
+                            </>
 
                         )
 
