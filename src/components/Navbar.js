@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { Link, NavLink } from 'react-router-dom';
+import { FaClinicMedical } from 'react-icons/fa';
 
 const Navbar = () => {
     const [mobileNav, setMobileNav] = useState(false);
     const [show, setShow] = useState(true);
     const menu = [
         { id: 1, text: 'Home', to: '/' },
-        { id: 2, text: 'About', to: '/about' },
-        { id: 3, text: 'Service', to: '/service' },
+        // { id: 2, text: 'About', to: '/about' },
+        // { id: 3, text: 'Service', to: '/service' },
         { id: 4, text: 'Contact', to: '/contact' },
     ];
 
@@ -38,12 +39,12 @@ const Navbar = () => {
 
     return (
 
-        <header className={`fixed top-0 w-full z-10 transition duration-150 pb-5 md:pb-0 ${show ? "bg-white" : "bg-indigo-700 shadow-xl"}`}>
+        <header className={`fixed top-0 w-full z-10 transition duration-150 pb-5 md:pb-0 ${show ? "bg-white shadow-lg" : "bg-indigo-700 shadow-xl"}`}>
             {/* desktop nav  */}
             <nav className="container flex items-center px-12 py-3">
                 {/* brand  */}
                 <Link to="/home" className="flex items-center space-x-2 flex-grow">
-                    <h1 className={`text-3xl font-extrabold transition duration-150 ${show ? "text-indigo-700 " : "text-white"}`} >Mediku</h1>
+                    <h1 className={`text-3xl font-extrabold transition duration-150 ${show ? "text-indigo-700 " : "text-white"} flex items-center gap-x-3`} ><FaClinicMedical /> Mediku</h1>
                 </Link>
                 {/* menu s */}
 
@@ -59,7 +60,10 @@ const Navbar = () => {
                         ))}
                     </ul>
 
-                    <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700`}>Signup</button>
+                    <Link to="/login">
+                        <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700`}>Login</button>
+                    </Link>
+
                 </div>
 
                 {/* menu icon  */}
@@ -86,7 +90,9 @@ const Navbar = () => {
 
                         {/* button  */}
                         <div className="px-3 py-2">
-                            <button className={`transition duration-150 ${show ? "bg-blue-700" : "bg-white text-gray-900 font-semibold"} ring-blue-300 px-3 py-2 text-white focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700 w-full`}>Signup</button>
+                            <Link to="/login">
+                                <button className={`transition duration-150 ${show ? "bg-blue-700" : "bg-white text-gray-900 font-semibold"} ring-blue-300 px-3 py-2 text-white focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700 w-full`}>Login</button>
+                            </Link>
                         </div>
                     </nav>
                 </>
