@@ -5,40 +5,45 @@ import HomePage from './components/Homepage/HomePage';
 import Notfound from './components/Notfound';
 import Login from './components/Registration Form/Login';
 import Contact from './components/Contact';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
 
 	return (
 
-		<Router>
+		<AuthProvider>
 
-			<Navbar />
+			<Router>
 
-			<Switch>
+				<Navbar />
 
-				<Route exact path="/">
-					<HomePage />
-				</Route>
+				<Switch>
 
-				<Route exact path="/home">
-					<HomePage />
-				</Route>
+					<Route exact path="/">
+						<HomePage />
+					</Route>
 
-				<Route exact path="/login">
-					<Login />
-				</Route>
+					<Route exact path="/home">
+						<HomePage />
+					</Route>
 
-				<Route exact path="/contact">
-					<Contact />
-				</Route>
+					<Route exact path="/login">
+						<Login />
+					</Route>
 
-				<Route exact path="*">
-					<Notfound />
-				</Route>
+					<Route exact path="/contact">
+						<Contact />
+					</Route>
 
-			</Switch>
+					<Route exact path="*">
+						<Notfound />
+					</Route>
 
-		</Router>
+				</Switch>
+
+			</Router>
+
+		</AuthProvider>
 
 	);
 

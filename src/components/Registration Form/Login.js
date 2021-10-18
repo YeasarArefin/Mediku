@@ -3,8 +3,17 @@ import { FaClinicMedical } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { CgLock } from 'react-icons/cg';
 import { FcGoogle } from 'react-icons/fc';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
+
+    const { googleLogin } = useAuth();
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+
+    };
 
     return (
 
@@ -14,13 +23,13 @@ const Login = () => {
 
                 <div className="container mt-16">
 
-                    <div className="w-2/6 p-5 rounded-lg shadow-2xl mx-auto flex flex-col gap-y-10">
+                    <div className="w-full lg:w-2/6 p-5 rounded-lg shadow-2xl mx-auto flex flex-col gap-y-10">
 
                         <div>
                             <h1 className="text-3xl text-indigo-700 flex items-center gap-x-3 font-extrabold justify-center"><FaClinicMedical />Mediku</h1>
                         </div>
 
-                        <form className="flex flex-col gap-y-5" action="">
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-y-5">
 
                             <div className="flex relative">
                                 <HiOutlineMail className="absolute text-xl top-4 left-3 text-indigo-600" />
@@ -39,9 +48,9 @@ const Login = () => {
                             <hr />
 
                             <h1 className="text-center text-gray-500">OR</h1>
-
-                            <button className="flex items-center justify-center gap-x-3 py-3 px-2  text-gray-700 font-semibold border border-gray-300 hover:bg-gray-200 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-400 transition duration-500">
-                                <FcGoogle /> Sing In With Google
+                            {/* onClick={googleSingIn} */}
+                            <button onClick={googleLogin} className="flex items-center justify-center gap-x-3 py-3 px-2  text-gray-700 font-semibold border border-gray-300 hover:bg-gray-200 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500">
+                                <FcGoogle className="text-2xl" /> Sing In With Google
                             </button>
 
                         </form>

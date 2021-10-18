@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { Link, NavLink } from 'react-router-dom';
 import { FaClinicMedical } from 'react-icons/fa';
+import { FiLogOut } from 'react-icons/fi';
+import useFirebase from '../hooks/useFirebase';
 
 const Navbar = () => {
+
     const [mobileNav, setMobileNav] = useState(false);
     const [show, setShow] = useState(true);
+    const { user, logOut } = useFirebase();
+
     const menu = [
         { id: 1, text: 'Home', to: '/' },
         // { id: 2, text: 'About', to: '/about' },
@@ -60,9 +65,36 @@ const Navbar = () => {
                         ))}
                     </ul>
 
-                    <Link to="/login">
-                        <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700`}>Login</button>
-                    </Link>
+
+                    {
+
+                        user.email ? (
+
+                            <div className="flex items-center gap-x-5">
+
+                                <img width="40px" className="rounded-full" src={user.photoURL} alt="user img" />
+
+                                <h1>{user.displayName}</h1>
+
+                                <button onClick={logOut} className={`flex items-center gap-x-2 transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700`}><FiLogOut />Log Out</button>
+
+                            </div>
+
+                        ) : (
+
+                            <Link to="/login">
+
+                                <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700`}>Login</button>
+
+                            </Link>
+
+                        )
+
+                    }
+
+
+
+
 
                 </div>
 
