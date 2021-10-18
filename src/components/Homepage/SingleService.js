@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const SingleService = ({ doctor }) => {
 
     const { name, designation, img, discription } = doctor;
@@ -9,9 +10,9 @@ const SingleService = ({ doctor }) => {
 
         <>
 
-            <div class="p-4 w-3/4 mx-auto">
+            <div class="p-4 mx-auto">
 
-                <div class="h-full flex flex-col items-center text-center border border-gray-200 rounded-2xl hover:shadow-2xl transition duration-500">
+                <div class="h-full flex flex-col items-center text-center border border-gray-200 rounded-2xl shadow-lg transition duration-500">
 
                     <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src={img} />
 

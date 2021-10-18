@@ -1,6 +1,18 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import SingleService from './SingleService';
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/components/effect-coverflow/effect-coverflow.min.css";
+import "swiper/components/pagination/pagination.min.css";
+// import Swiper core and required modules
+import SwiperCore, {
+    EffectCoverflow, Pagination, Autoplay
+} from 'swiper/core';
+
+// install Swiper modules
+SwiperCore.use([EffectCoverflow, Pagination, Autoplay]);
 
 const Services = () => {
 
@@ -24,11 +36,41 @@ const Services = () => {
 
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="grid grid-cols-1">
 
-                        {
-                            doctors.map(doctor => <SingleService doctor={doctor} />)
-                        }
+                        <div className="w-full">
+                            <Swiper
+                                slidesPerView={3} pagination={{
+                                    "clickable": true
+                                }}
+                                loop={true}
+                                autoplay={{
+                                    delay: 2000,
+                                    disableOnInteraction: false
+                                }}
+                                breakpoints={{
+                                    500: {
+                                        slidesPerView: 1,
+
+                                    },
+                                    700: {
+                                        slidesPerView: 2,
+
+                                    },
+                                    1496: {
+                                        slidesPerView: 4
+                                    }
+                                }} className="mySwiper">
+
+                                {
+                                    doctors.map(doctor => (
+                                        <SwiperSlide>
+                                            <SingleService doctor={doctor} />
+                                        </SwiperSlide>))
+                                }
+
+                            </Swiper>
+                        </div>
 
                     </div>
 
