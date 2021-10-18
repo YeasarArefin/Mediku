@@ -57,10 +57,7 @@ const Navbar = () => {
                     <ul className="flex items-center space-x-10">
                         {menu.map(item => (
                             <li key={item.id}>
-                                <NavLink activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "skyblue"
-                                }} to={item.to} className={`transition duration-150 ${show ? "text-gray-600 text-lg" : "text-white"}`}>{item.text}</NavLink>
+                                <NavLink to={item.to} className={` transition duration-150 ${show ? "text-gray-600 text-lg" : "text-white"}`}>{item.text}</NavLink>
                             </li>
                         ))}
                     </ul>
@@ -74,9 +71,9 @@ const Navbar = () => {
 
                                 <img width="40px" className="rounded-full" src={user.photoURL} alt="user img" />
 
-                                <h1>{user.displayName}</h1>
+                                <h1 className={`${show ? "text-gray-900" : "text-white"}`}>{user.displayName}</h1>
 
-                                <button onClick={logOut} className={`flex items-center gap-x-2 transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700`}><FiLogOut />Log Out</button>
+                                <button onClick={logOut} className={`flex items-center gap-x-2 transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg`}><FiLogOut />Log Out</button>
 
                             </div>
 
@@ -84,7 +81,7 @@ const Navbar = () => {
 
                             <Link to="/login">
 
-                                <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700`}>Login</button>
+                                <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg`}>Login</button>
 
                             </Link>
 
@@ -123,7 +120,7 @@ const Navbar = () => {
                         {/* button  */}
                         <div className="px-3 py-2">
                             <Link to="/login">
-                                <button className={`transition duration-150 ${show ? "bg-blue-700" : "bg-white text-gray-900 font-semibold"} ring-blue-300 px-3 py-2 text-white focus:ring-4 transition duration-150 rounded-lg hover:bg-blue-700 w-full`}>Login</button>
+                                <button className={`transition duration-150 ${show ? "bg-blue-700" : "bg-white text-gray-900 font-semibold"} ring-blue-300 px-3 py-2 text-white focus:ring-4 transition duration-150 rounded-lg w-full`}>Login</button>
                             </Link>
                         </div>
                     </nav>

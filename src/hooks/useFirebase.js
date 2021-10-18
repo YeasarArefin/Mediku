@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
 import initApp from '../firebase/firebase.init';
+import { useHistory } from 'react-router-dom';
 
 initApp();
 
@@ -9,7 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
-
+    const history = useHistory();
 
     const googleLogin = () => {
 
@@ -18,6 +19,7 @@ const useFirebase = () => {
 
                 const user = result.user;
                 setUser(user);
+                history.push("/home");
             });
 
 
