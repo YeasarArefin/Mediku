@@ -20,6 +20,7 @@ const Login = () => {
             .then(result => {
 
                 history.push("/home");
+
             });
     };
 

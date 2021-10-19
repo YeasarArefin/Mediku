@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initApp from '../firebase/firebase.init';
+import { useHistory } from 'react-router-dom';
 
 initApp();
 
@@ -9,7 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
-
+    const history = useHistory();
     const googleLogin = () => {
 
         return signInWithPopup(auth, googleProvider);
@@ -29,12 +30,12 @@ const useFirebase = () => {
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: img
                 }).then(() => {
-                    // Profile updated!
-                    console.log('name added');
-                    // ...
+
+                    window.location.reload();
+                    // sir reload na korle user er data show kore na, Sorry Kichu Mone Korben Na plz 😊
+
                 }).catch((error) => {
-                    // An error occurred
-                    // ...
+                    console.log(error.message);
                 });
 
             })
@@ -51,6 +52,7 @@ const useFirebase = () => {
                 const user = result.user;
                 setUser(user);
                 console.log(user);
+                window.location.reload();
             }).catch(error => {
                 console.log(error.message);
             });

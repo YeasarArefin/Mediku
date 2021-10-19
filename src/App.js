@@ -9,6 +9,7 @@ import AuthProvider from './context/AuthProvider';
 import Register from './components/Registration Form/Register';
 import DoctorsProvider from './context/DoctorsProvider';
 import Appointment from './components/Appointment';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
 
@@ -44,9 +45,9 @@ function App() {
 							<Contact />
 						</Route>
 
-						<Route exact path="/appointment/:id">
+						<PrivateRoute exact path="/appointment/:id">
 							<Appointment />
-						</Route>
+						</PrivateRoute>
 
 						<Route exact path="*">
 							<Notfound />

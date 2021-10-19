@@ -72,9 +72,9 @@ const Navbar = () => {
 
                             <div className="flex items-center gap-x-3">
 
-                                <img width="40px" className="rounded-full" src={user.photoURL} alt="user img" />
+                                <img width="40px" className="rounded-full" src={user.photoURL} alt="user" />
 
-                                <h1 className={`${show ? "text-gray-900" : "text-white"}`}>{user.displayName}</h1>
+                                <h1 className={`${show ? "text-gray-900" : "text-white"} text-xl font-semibold`}>{user.displayName}</h1>
 
                                 <button onClick={logOut} className={`flex items-center gap-x-2 transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg`}><FiLogOut />Log Out</button>
 
