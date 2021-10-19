@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const { googleLogin, loginWithEmailPassword, setIsLoading } = useAuth();
+    const { googleLogin, loginWithEmailPassword, setIsLoading, error } = useAuth();
     const history = useHistory();
 
     const [email, setEmail] = useState("");
@@ -67,15 +67,18 @@ const Login = () => {
 
                         <form onSubmit={handleSubmit} className="flex flex-col gap-y-5">
 
-                            <div className="flex relative">
+                            <div className="flex flex-col relative">
                                 <HiOutlineMail className="absolute text-xl top-4 left-3 text-indigo-600" />
-                                <input onBlur={handleEmail} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="email" placeholder="Email" />
+                                <input onBlur={handleEmail} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="email" placeholder="Email" required />
+
                             </div>
 
-                            <div className="flex relative">
+                            <div className="flex flex-col relative">
                                 <CgLock className="absolute text-xl top-4 left-3 text-indigo-600" />
-                                <input onBlur={handlePassword} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="password" placeholder="Password" />
+                                <input onBlur={handlePassword} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="password" placeholder="Password" required />
                             </div>
+
+                            <div className="text-red-700 text-center">{error}</div>
 
                             <input onClick={() => loginWithEmailPassword(email, password)} className="py-3 px-2 bg-indigo-600 text-white rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-400 transition duration-500" type="submit" value="Log In" />
 

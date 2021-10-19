@@ -8,6 +8,7 @@ initApp();
 const useFirebase = () => {
 
     const [user, setUser] = useState({});
+    const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -37,11 +38,13 @@ const useFirebase = () => {
 
                 }).catch((error) => {
                     console.log(error.message);
+                    setError(error.message);
                 });
 
             })
             .catch((error) => {
                 console.log(error.message);
+                setError(error.message);
             });
 
         Swal.fire({
@@ -62,6 +65,7 @@ const useFirebase = () => {
                 window.location.reload();
             }).catch(error => {
                 console.log(error.message);
+                setError(error.message);
             });
 
     };
@@ -81,12 +85,21 @@ const useFirebase = () => {
     }, [(auth)]);
 
     const logOut = () => {
+
         setIsLoading(true);
+
         signOut(auth).then(() => {
+
             setUser({});
+
         }).catch((error) => {
-            // An error happened.
-        }).finally(() => { setIsLoading(false); });
+
+            setError(error.message);
+
+        }).finally(() => {
+
+            setIsLoading(false);
+        });
 
     };
 
@@ -97,7 +110,8 @@ const useFirebase = () => {
         registerWithEmailPassword,
         loginWithEmailPassword,
         setIsLoading,
-        isLoading
+        isLoading,
+        error
     };
 
 };
