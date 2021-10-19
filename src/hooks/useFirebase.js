@@ -47,11 +47,6 @@ const useFirebase = () => {
                 setError(error.message);
             });
 
-        Swal.fire({
-            title: 'Account Created',
-            icon: 'success',
-            confirmButtonText: 'Cool'
-        });
 
     };
 

@@ -22,12 +22,6 @@ const Login = () => {
         googleLogin()
             .then(result => {
 
-                Swal.fire({
-                    title: 'Your Account Has been Created',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                });
-
                 history.push("/home");
 
             })
@@ -69,13 +63,13 @@ const Login = () => {
 
                             <div className="flex flex-col relative">
                                 <HiOutlineMail className="absolute text-xl top-4 left-3 text-indigo-600" />
-                                <input onBlur={handleEmail} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="email" placeholder="Email" required />
+                                <input onBlur={handleEmail} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="email" placeholder="Email" />
 
                             </div>
 
                             <div className="flex flex-col relative">
                                 <CgLock className="absolute text-xl top-4 left-3 text-indigo-600" />
-                                <input onBlur={handlePassword} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="password" placeholder="Password" required />
+                                <input onBlur={handlePassword} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="password" placeholder="Password" />
                             </div>
 
                             <div className="text-red-700 text-center">{error}</div>
