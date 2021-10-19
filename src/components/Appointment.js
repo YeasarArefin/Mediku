@@ -2,12 +2,25 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useDoctors from '../hooks/useDoctors';
+import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Appointment = () => {
 
     const doctors = useDoctors();
     const { id } = useParams();
     const newDoctor = doctors.find(doctor => doctor.id == id);
+    const history = useHistory();
+
+    const alert = () => {
+
+        Swal.fire({
+            title: 'Appoinment Done',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        });
+        history.push("/");
+    };
 
     return (
 
@@ -29,7 +42,7 @@ const Appointment = () => {
                             <div className="flex gap-x-5">
 
                                 <div className="w-48">
-                                    <button className="w-full px-3 py-3 bg-indigo-700 text-white outline-none focus:ring-4 focus:ring-indigo-300 transition duration-500 rounded-full transform hover:-translate-y-1 hover:scale-110">Take Appoinment</button>
+                                    <button onClick={alert} className="w-full px-3 py-3 bg-indigo-700 text-white outline-none focus:ring-4 focus:ring-indigo-300 transition duration-500 rounded-full transform hover:-translate-y-1 hover:scale-110">Take Appoinment</button>
                                 </div>
 
                                 <Link to="/home">

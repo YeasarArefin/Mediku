@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 const SingleService = ({ doctor }) => {
 
     const { id, name, designation, img, discription } = doctor;
+
 
     return (
 

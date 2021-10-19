@@ -6,6 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 import useAuth from '../../hooks/useAuth';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
@@ -16,8 +17,15 @@ const Login = () => {
     const [password, setPassword] = useState("");
 
     const LoginGoogle = () => {
+
         googleLogin()
             .then(result => {
+
+                Swal.fire({
+                    title: 'Your Account Has been Created',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                });
 
                 history.push("/home");
 

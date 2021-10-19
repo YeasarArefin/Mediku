@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initApp from '../firebase/firebase.init';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 initApp();
 
@@ -11,6 +12,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const history = useHistory();
+
     const googleLogin = () => {
 
         return signInWithPopup(auth, googleProvider);
@@ -42,6 +44,12 @@ const useFirebase = () => {
             .catch((error) => {
                 console.log(error.message);
             });
+
+        Swal.fire({
+            title: 'Account Created',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        });
 
     };
 
@@ -94,4 +102,3 @@ const useFirebase = () => {
 };
 
 export default useFirebase;
-
