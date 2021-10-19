@@ -1,4 +1,4 @@
-# Workflow. Learn Code Easily
+# Mediku
 
 ## Live Demo: [Live Site Link](https://yeasararefin-ph-as10.netlify.app/)
 
