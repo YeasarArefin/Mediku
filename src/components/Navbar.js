@@ -55,7 +55,7 @@ const Navbar = () => {
                 </Link>
                 {/* menu s */}
 
-                <div className="hidden md:flex lg:flex space-x-10">
+                <div className="hidden md:flex lg:flex items-center space-x-5">
                     <ul className="flex items-center space-x-10">
                         {menu.map(item => (
                             <li key={item.id}>
@@ -89,13 +89,13 @@ const Navbar = () => {
 
                                 <Link to="/login">
 
-                                    <button className={`transition duration-150 ${!show && "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg border border-gray-400`} >Login</button>
+                                    <button className={`transition duration-150 ${!show && "bg-white text-gray-900"} ring-blue-300 px-5 py-3  focus:ring-4 transition duration-150 rounded-full border border-indigo-500`} >Login</button>
 
                                 </Link>
 
                                 <Link to="/Register">
 
-                                    <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-3 py-2  focus:ring-4 transition duration-150 rounded-lg`} >Register</button>
+                                    <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-4 py-3 focus:ring-4 transition duration-150 rounded-full`} >Register</button>
 
                                 </Link>
 
