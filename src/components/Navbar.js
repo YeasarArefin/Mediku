@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { Link, NavLink } from 'react-router-dom';
-import { FaClinicMedical } from 'react-icons/fa';
+import { FaStethoscope } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
 import useAuth from '../hooks/useAuth';
 
@@ -49,7 +49,7 @@ const Navbar = () => {
             <nav className="container flex items-center px-12 py-3">
                 {/* brand  */}
                 <Link to="/home" className="flex items-center space-x-1 flex-grow">
-                    <h1 className={`text-3xl font-extrabold transition duration-150 ${show ? "text-indigo-700 " : "text-white"} flex items-center gap-x-3`} ><FaClinicMedical /> Mediku</h1>
+                    <h1 className={`text-3xl font-extrabold transition duration-150 ${show ? "text-indigo-700 " : "text-white"} flex items-center gap-x-3`} ><FaStethoscope /> Mediku</h1>
                 </Link>
                 {/* menu s */}
 
@@ -57,7 +57,10 @@ const Navbar = () => {
                     <ul className="flex items-center space-x-10">
                         {menu.map(item => (
                             <li key={item.id}>
-                                <NavLink to={item.to} className={` transition duration-150 ${show ? "text-gray-600 text-lg" : "text-white"}`}>{item.text}</NavLink>
+                                <NavLink exact activeStyle={{
+                                    fontWeight: "bold",
+                                    borderBottom: "2px solid skyblue"
+                                }} to={item.to} className={` transition duration-150 ${show ? "text-gray-600 text-lg" : "text-white"}`}>{item.text}</NavLink>
                             </li>
                         ))}
                     </ul>

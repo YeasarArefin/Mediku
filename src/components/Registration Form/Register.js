@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaClinicMedical } from 'react-icons/fa';
+import { FaStethoscope } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { CgLock } from 'react-icons/cg';
 import { FcGoogle } from 'react-icons/fc';
@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom';
 
 const Register = () => {
 
-    const { googleLogin, registerWithEmailPassword, ProfileUpdate } = useAuth();
+    const { googleLogin, registerWithEmailPassword } = useAuth();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -60,7 +60,7 @@ const Register = () => {
                     <div className="w-full lg:w-2/6 p-5 rounded-lg shadow-2xl mx-auto flex flex-col gap-y-10">
 
                         <div>
-                            <h1 className="text-3xl text-indigo-700 flex items-center gap-x-3 font-extrabold justify-center"><FaClinicMedical />Mediku</h1>
+                            <h1 className="text-3xl text-indigo-700 flex items-center gap-x-3 font-extrabold justify-center"><FaStethoscope />Mediku</h1>
                         </div>
 
                         <form onSubmit={handleSubmit} className="flex flex-col gap-y-5">

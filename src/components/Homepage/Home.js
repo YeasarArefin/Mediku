@@ -19,7 +19,7 @@ const Home = () => {
                     </div>
 
                     <div className="header-img">
-                        <img src="https://thumbs.dreamstime.com/b/group-medical-doctors-isolated-white-unity-concept-149089801.jpg" />
+                        <img src="https://thumbs.dreamstime.com/b/group-medical-doctors-isolated-white-unity-concept-149089801.jpg" alt="baner-img" />
                         {/* <img src="https://image.freepik.com/free-vector/detailed-doctors-nurses_52683-60321.jpg" alt="doctors" /> */}
                     </div>
 

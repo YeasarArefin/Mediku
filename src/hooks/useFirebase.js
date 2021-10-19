@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initApp from '../firebase/firebase.init';
 
@@ -44,7 +44,6 @@ const useFirebase = () => {
 
     };
 
-
     const loginWithEmailPassword = (email, password) => {
 
         signInWithEmailAndPassword(auth, email, password)
@@ -70,7 +69,7 @@ const useFirebase = () => {
 
         });
 
-    }, []);
+    }, [(auth)]);
 
     const logOut = () => {
 

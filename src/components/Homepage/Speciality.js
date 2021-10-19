@@ -28,8 +28,6 @@ const Speciality = () => {
 
     ];
 
-    console.log(speciality);
-
     return (
 
         <>
@@ -51,7 +49,7 @@ const Speciality = () => {
                     <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
 
                         {
-                            speciality.map(item => <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
+                            speciality.map(item => <div key={item.id} className="p-4 md:w-1/3 flex flex-col text-center items-center">
 
                                 <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 mb-5 flex-shrink-0">
 

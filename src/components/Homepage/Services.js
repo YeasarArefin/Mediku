@@ -22,9 +22,9 @@ const Services = () => {
 
         <>
 
-            <section class="text-gray-600 body-font">
+            <section className="text-gray-600 body-font">
 
-                <div class="container px-5 py-24 mx-auto">
+                <div className="container px-5 py-24 mx-auto">
 
                     <div className="container text-center mb-10">
 
@@ -36,7 +36,7 @@ const Services = () => {
 
                     </div>
 
-                    <div class="grid grid-cols-1">
+                    <div className="grid grid-cols-1">
 
                         <div className="w-full">
                             <Swiper
@@ -64,7 +64,7 @@ const Services = () => {
 
                                 {
                                     doctors.map(doctor => (
-                                        <SwiperSlide>
+                                        <SwiperSlide key={doctor.id}>
                                             <SingleService doctor={doctor} />
                                         </SwiperSlide>))
                                 }
