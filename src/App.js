@@ -10,6 +10,7 @@ import Register from './components/Registration Form/Register';
 import DoctorsProvider from './context/DoctorsProvider';
 import Appointment from './components/Appointment';
 import PrivateRoute from './components/PrivateRoute';
+import Aboutus from './components/Aboutus';
 
 function App() {
 
@@ -43,6 +44,10 @@ function App() {
 
 						<Route exact path="/contact">
 							<Contact />
+						</Route>
+
+						<Route exact path="/about">
+							<Aboutus />
 						</Route>
 
 						<PrivateRoute exact path="/appointment/:id">

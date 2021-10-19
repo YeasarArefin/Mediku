@@ -13,8 +13,7 @@ const Navbar = () => {
 
     const menu = [
         { id: 1, text: 'Home', to: '/' },
-        // { id: 2, text: 'About', to: '/about' },
-        // { id: 3, text: 'Service', to: '/service' },
+        { id: 2, text: 'About', to: '/about' },
         { id: 4, text: 'Contact', to: '/contact' },
     ];
 

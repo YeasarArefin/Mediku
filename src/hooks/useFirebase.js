@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initApp from '../firebase/firebase.init';
-import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 initApp();
@@ -11,7 +10,6 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
-    const history = useHistory();
 
     const googleLogin = () => {
 

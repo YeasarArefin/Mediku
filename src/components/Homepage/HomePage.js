@@ -1,5 +1,6 @@
 import React from 'react';
 import Customers from './Customers';
+import Downloadapp from './Downloadapp';
 import Footer from './Footer';
 import Home from './Home';
 import Services from './Services';
@@ -14,6 +15,7 @@ const HomePage = () => {
             <Speciality />
             <Services />
             <Customers />
+            <Downloadapp />
             <Footer />
         </>
 
