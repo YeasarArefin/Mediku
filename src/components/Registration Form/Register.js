@@ -52,7 +52,10 @@ const Register = () => {
 
     return (
 
-        <>
+        <div data-aos="fade-right"
+            data-aos-duration="700"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
 
             <div className="flex h-screen items-center justify-center">
 
@@ -108,7 +111,7 @@ const Register = () => {
 
             </div>
 
-        </>
+        </div>
 
     );
 

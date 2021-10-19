@@ -5,7 +5,10 @@ const Contact = () => {
 
     return (
 
-        <div className=" justify-center">
+        <div data-aos="fade-right"
+            data-aos-duration="700"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" className=" justify-center">
 
             <section className="text-gray-600 body-font relative">
 

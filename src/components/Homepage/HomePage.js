@@ -1,4 +1,5 @@
 import React from 'react';
+import Coute from './Coute';
 import Customers from './Customers';
 import Downloadapp from './Downloadapp';
 import Footer from './Footer';
@@ -16,6 +17,7 @@ const HomePage = () => {
             <Services />
             <Customers />
             <Downloadapp />
+            <Coute />
             <Footer />
         </>
 

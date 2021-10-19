@@ -20,7 +20,10 @@ const Services = () => {
 
     return (
 
-        <>
+        <div data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
 
             <section className="text-gray-600 body-font">
 
@@ -78,7 +81,7 @@ const Services = () => {
 
             </section>
 
-        </>
+        </div>
 
     );
 

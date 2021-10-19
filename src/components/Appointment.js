@@ -47,7 +47,7 @@ const Appointment = () => {
 
                                 <Link to="/home">
                                     <div className="w-48">
-                                        <button className="w-full px-3 py-3 text-gray-900 border border-indigo-700 outline-none focus:ring-4 focus:ring-indigo-300 transition duration-500 rounded-full mb-5 ">Back To Home</button>
+                                        <button className="w-full px-3 py-3 text-gray-900 border border-indigo-700 outline-none focus:ring-4 focus:ring-indigo-300 transition duration-500 rounded-full mb-5 hover:shadow-lg">Back To Home</button>
                                     </div>
                                 </Link>
 

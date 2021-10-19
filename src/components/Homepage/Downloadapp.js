@@ -1,8 +1,14 @@
 import React from 'react';
 
 const Downloadapp = () => {
+
     return (
-        <div>
+
+        <div data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+
             <section className="text-gray-600 body-font mt-10 mb-36">
 
                 <h1 className="text-center text-4xl">Download <span className="font-bold text-gray-900"> App Now</span></h1>

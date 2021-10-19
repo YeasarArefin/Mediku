@@ -5,7 +5,10 @@ const Footer = () => {
 
     return (
 
-        <div>
+        <div data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
 
             <footer className="bg-indigo-700 body-font">
                 <div className="container px-5 py-24 mx-auto">

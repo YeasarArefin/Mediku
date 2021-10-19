@@ -11,8 +11,17 @@ import DoctorsProvider from './context/DoctorsProvider';
 import Appointment from './components/Appointment';
 import PrivateRoute from './components/PrivateRoute';
 import Aboutus from './components/Aboutus';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 function App() {
+
+	useEffect(() => {
+
+		AOS.init();
+
+	}, []);
 
 	return (
 

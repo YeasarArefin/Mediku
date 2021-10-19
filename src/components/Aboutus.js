@@ -3,8 +3,13 @@ import { MdArrowBackIos } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 const Aboutus = () => {
+
     return (
-        <>
+
+        <div data-aos="fade-right"
+            data-aos-duration="700"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
 
             <div className="container">
 
@@ -13,8 +18,19 @@ const Aboutus = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
 
                         <div className="flex flex-col gap-y-10">
-                            <h1 className="text-5xl font-bold text-center lg:text-left">About Us</h1>
-                            <p className="text-lg text-center lg:text-justify w-full lg:w-5/6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem numquam in eius, porro impedit quisquam architecto error velit minus, fugit sit accusamus! At iusto accusantium repellendus quod iure, eveniet placeat esse quibusdam hic nihil quos id assumenda distinctio in rerum. Facere provident placeat ad ipsum veniam minima doloribus quis et.</p>
+                            <h1 className="text-5xl font-bold text-center lg:text-left">About Us
+
+                            </h1>
+                            <div class="flex mt-0 justify-start"><div class="w-16 h-1 rounded-full bg-indigo-600 inline-flex"></div></div>
+                            <p className="text-lg text-center lg:text-justify w-full lg:w-5/6">Welcome to Mediku, your number one source for all things . We're dedicated to providing you the very best of [product], with an emphasis on
+
+                                Founded in 2021 by Yeasar Arefin, Mediku has come a long way from its beginnings in starting location. When founder name first started out, his/her/their passion for brand message - e.g. "eco-friendly cleaning products" drove them to start their own business.
+
+                                We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
+
+                                Sincerely,
+
+                                Yeasar Arefin</p>
 
                             <Link to="/">
                                 <button className="px-5 w-44 py-4 bg-indigo-700 text-white outline-none focus:ring-4 focus:ring-indigo-300 transition duration-500 rounded-full flex items-center gap-x-2">< MdArrowBackIos />Back To Home</button>
@@ -32,7 +48,7 @@ const Aboutus = () => {
 
             </div>
 
-        </>
+        </div>
     );
 };
 

@@ -43,7 +43,10 @@ const Navbar = () => {
 
     return (
 
-        <header className={`fixed top-0 w-full z-10 transition duration-150 pb-5 md:pb-0 ${show ? "bg-white shadow-lg" : "bg-indigo-700 shadow-xl"}`}>
+        <header data-aos="fade-right"
+            data-aos-duration="700"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" className={`fixed top-0 w-full z-10 transition duration-150 pb-5 md:pb-0 ${show ? "bg-white shadow-lg" : "bg-indigo-700 shadow-xl"}`}>
             {/* desktop nav  */}
             <nav className="container flex items-center px-12 py-3">
                 {/* brand  */}
@@ -58,7 +61,8 @@ const Navbar = () => {
                             <li key={item.id}>
                                 <NavLink exact activeStyle={{
                                     fontWeight: "bold",
-                                    borderBottom: "2px solid skyblue"
+                                    color: "skyblue",
+                                    borderBottom: "3px solid skyblue"
                                 }} to={item.to} className={` transition duration-150 ${show ? "text-gray-600 text-lg" : "text-white"}`}>{item.text}</NavLink>
                             </li>
                         ))}

@@ -8,21 +8,21 @@ const Speciality = () => {
             id: 1,
             img: "https://i.ibb.co/wN2XsRk/heartbeat.png",
             title: "Admit Patient Here",
-            description: "Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard."
+            description: "You Can Meet Not Only Doctors . You Can Addmit A Patient On Hospital With Best Rate With Mekiku"
 
         },
         {
             id: 2,
             img: "https://i.ibb.co/bQ4X9f7/scissors-outline.png",
             title: "Best Surgery",
-            description: "Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard."
+            description: "Mekdiku Provides one of the best sergent , best surgery experience in the country at the best price"
 
         },
         {
             id: 3,
             img: "https://i.ibb.co/6BDGXFW/user.png",
             title: "Best Service",
-            description: "Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard."
+            description: "Our Best App provides best services for your appoinment , You will notifi automiticly when you meet araived"
 
         }
 
@@ -30,11 +30,14 @@ const Speciality = () => {
 
     return (
 
-        <>
+        <div data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
 
             <section className="text-gray-600 body-font">
 
-                <div className="container px-5 py-24 mx-auto">
+                <div className="container px-5 py-10 mx-auto">
 
                     <div className="text-center mb-20">
 
@@ -80,7 +83,7 @@ const Speciality = () => {
 
             </section>
 
-        </>
+        </div>
 
     );
 

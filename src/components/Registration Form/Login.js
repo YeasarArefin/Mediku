@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const { googleLogin, loginWithEmailPassword } = useAuth();
+    const { googleLogin, loginWithEmailPassword, setIsLoading } = useAuth();
     const history = useHistory();
 
     const [email, setEmail] = useState("");
@@ -18,6 +18,7 @@ const Login = () => {
 
     const LoginGoogle = () => {
 
+        setIsLoading(true);
         googleLogin()
             .then(result => {
 
@@ -29,7 +30,8 @@ const Login = () => {
 
                 history.push("/home");
 
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     const handleSubmit = (e) => {
@@ -48,7 +50,10 @@ const Login = () => {
 
     return (
 
-        <>
+        <div data-aos="fade-right"
+            data-aos-duration="700"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
 
             <div className="flex h-screen items-center justify-center">
 
@@ -94,7 +99,7 @@ const Login = () => {
 
             </div>
 
-        </>
+        </div>
 
     );
 
