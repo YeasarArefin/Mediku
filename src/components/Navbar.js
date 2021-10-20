@@ -75,7 +75,7 @@ const Navbar = () => {
 
                             <div className="flex items-center gap-x-3">
 
-                                <img width="40px" className="rounded-full" src={user.photoURL} alt="user" />
+                                <img width="40px" className="rounded-full" src={user?.photoURL ? user?.photoURL : "https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"} alt="user" />
 
                                 <h1 className={`${show ? "text-gray-900" : "text-white"} text-xl font-semibold`}>{user.displayName}</h1>
 
@@ -89,13 +89,13 @@ const Navbar = () => {
 
                                 <Link to="/login">
 
-                                    <button className={`transition duration-150 ${!show && "bg-white text-gray-900"} ring-blue-300 px-5 py-3  focus:ring-4 transition duration-150 rounded-full border border-indigo-500`} >Login</button>
+                                    <button className={`transition duration-150 ${!show && "bg-white text-gray-900"} ring-blue-300 px-5 py-3  focus:ring-4 transition duration-500 rounded-full border border-indigo-500`} >Login</button>
 
                                 </Link>
 
-                                <Link to="/Register">
+                                <Link to="/register">
 
-                                    <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-4 py-3 focus:ring-4 transition duration-150 rounded-full`} >Register</button>
+                                    <button className={`transition duration-150 ${show ? "bg-indigo-700 text-white" : "bg-white text-gray-900"} ring-blue-300 px-4 py-3 focus:ring-4 transition duration-500 rounded-full`} >Register</button>
 
                                 </Link>
 

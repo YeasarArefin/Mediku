@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendEmailVerification } from "firebase/auth";
 import initApp from '../firebase/firebase.init';
 import Swal from 'sweetalert2';
 
@@ -34,12 +34,13 @@ const useFirebase = () => {
                 }).then(() => {
 
                     window.location.reload();
-                    // sir reload na korle user er data show kore na, Sorry Kichu Mone Korben Na plz 😊
+                    // sir reload na kore user er data show koraite partesi na, Sorry Kichu Mone Korben Na plz 😊
 
                 }).catch((error) => {
                     console.log(error.message);
                     setError(error.message);
                 });
+
 
             })
             .catch((error) => {
@@ -47,6 +48,11 @@ const useFirebase = () => {
                 setError(error.message);
             });
 
+        Swal.fire({
+            title: 'Account Created',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        });
 
     };
 
@@ -86,6 +92,11 @@ const useFirebase = () => {
         signOut(auth).then(() => {
 
             setUser({});
+            Swal.fire({
+                title: 'Successfully Logout',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            });
 
         }).catch((error) => {
 

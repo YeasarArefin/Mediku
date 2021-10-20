@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom';
 
 const Register = () => {
 
-    const { googleLogin, registerWithEmailPassword } = useAuth();
+    const { googleLogin, registerWithEmailPassword, error, setError } = useAuth();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -88,6 +88,8 @@ const Register = () => {
                                 <BsImage className="absolute text-xl top-4 left-3 text-indigo-600" />
                                 <input onBlur={handleImg} className="w-full pl-10 pr-3 py-3 border focus:shadow-lg border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500 text-gray-700" type="text" placeholder="Image URL" />
                             </div>
+
+                            <div className="text-red-700 text-center">{error}</div>
 
                             <button className="py-3 px-2 bg-indigo-600 text-white rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-400 transition duration-500" type="submit" value="Register" >Register</button>
 

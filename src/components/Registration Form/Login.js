@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const { googleLogin, loginWithEmailPassword, setIsLoading, error } = useAuth();
+    const { googleLogin, loginWithEmailPassword, setIsLoading, error, setError } = useAuth();
     const history = useHistory();
 
     const [email, setEmail] = useState("");
@@ -22,6 +22,11 @@ const Login = () => {
         googleLogin()
             .then(result => {
 
+                Swal.fire({
+                    title: 'Your Account Has been Created',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                });
                 history.push("/home");
 
             })
@@ -83,7 +88,6 @@ const Login = () => {
                             <hr />
 
                             <h1 className="text-center text-gray-500">OR</h1>
-                            {/* onClick={googleSingIn} */}
                             <button onClick={LoginGoogle} className="flex items-center justify-center gap-x-3 py-3 px-2  text-gray-700 font-semibold border border-gray-300 hover:bg-gray-200 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-500 transition duration-500">
                                 <FcGoogle className="text-2xl" /> Sing In With Google
                             </button>
